@@ -121,8 +121,7 @@
     <!-- slider_area_end -->
 
     <!-- about_area_start  -->
-    <!-- about_area_start  -->
-    <!-- about_area_start  -->
+
     <section id="about">
         <div class="about_area black_bg">
             <div class="container">
@@ -488,6 +487,7 @@
     </section>
     <!-- KANDIDAT SMP END  -->
 
+    <!-- TIMELINE START-->
     <div class="program_details_area detials_bg_1 overlay2 timeline-section" style="background-image: url('img/FOTO\ KABINET\ 1.jpg'); 
            background-size: cover; 
            background-position: center; 
@@ -659,39 +659,74 @@
 
     </div>
 
+    <!-- TIMELINE END-->
 
-    <!-- Modal Profil -->
-    <div class="modal fade" id="profilRasya" tabindex="-1" aria-labelledby="profilRasyaLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profilRasyaLabel">Profil Kandidat - RASYA</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="img/FOTO KANDIDAT/RASYA.jpg" alt="Foto Rasya" class="img-fluid rounded">
-                        </div>
-                        <div class="col-md-8">
-                            <h4>Rasya Rasya Rasya</h4>
-                            <p><strong>Posisi:</strong> Kandidat Presiden 01</p>
-                            <p><strong>Visi:</strong> Menjadikan OSIS lebih aktif, inklusif, dan inovatif.</p>
-                            <p><strong>Misi:</strong></p>
-                            <ul>
-                                <li>Meningkatkan partisipasi siswa dalam kegiatan sekolah.</li>
-                                <li>Mengembangkan program inovatif untuk siswa.</li>
-                                <li>Mendorong budaya saling menghargai dan kerjasama.</li>
-                            </ul>
+    <!-- testimonial_area_start -->
+    <section id="testimonial">
+        <div class="about_area black_bg" style="padding:60px 0;">
+            <div class="container">
+
+                <!-- Judul -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8">
+                        <div class="section_title text-center">
+                            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                                style="color:#FFD700; font-size:50px; font-weight:bold; margin-bottom:5px;">
+                                TESTIMONI
+                            </h3>
+                            <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s"
+                                style="color:white; font-size:40px; font-weight:normal; letter-spacing:1px;">
+                                PILSCAIS
+                            </h4>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+
+
+                <!-- Carousel Testimoni -->
+                <div class="owl-carousel testimonial-carousel">
+
+                    <!-- Testimoni 1 -->
+                    <div class="single_testimonial text-center"
+                        style="background:#1a1a1a; border-radius:15px; padding:30px; border:1px solid #333;">
+                        <img src="img/TESTI/pres sma.jpeg" alt="User 1"
+                            style="width:80px; height:80px; border-radius:50%; margin-bottom:15px; border:2px solid #FFD700;">
+                        <p style="color:white; font-style:italic;">"PILSCAIS memberikan pembelajaran yang sangat
+                            berharga untuk bisa saling menghargai dan berjuang untuk kebenaran. Dalam setiap prosesnya,
+                            banyak sekali keterlibatan dan usaha yang kelak akan menjadi pengigat betapa besarnya
+                            perjuangan untuk mencapai tujuan bersama."</p>
+                        <h5 style="color:#FFD700; margin-top:15px;">Muhamad Iqbal Amrullah</h5>
+                        <span style="color:gray;">Presiden SCAIS 24/25</span>
+                    </div>
+
+                    <!-- Testimoni 2 -->
+                    <div class="single_testimonial text-center"
+                        style="background:#1a1a1a; border-radius:15px; padding:30px; border:1px solid #333;">
+                        <img src="img/TESTI/testi 1.png" alt="User 2"
+                            style="width:80px; height:80px; border-radius:50%; margin-bottom:15px; border:2px solid #FFD700;">
+                        <p style="color:white; font-style:italic;">"Saya tahu saya adalah manusia. Tapi selayaknya manusia, saya adalah manusia"</p>
+                        <h5 style="color:#FFD700; margin-top:15px;">Abdul Qadir</h5>
+                        <span style="color:gray;">Peserta Kandidat SMA</span>
+                    </div>
+
+                    <!-- Testimoni 3 -->
+                    <div class="single_testimonial text-center"
+                        style="background:#1a1a1a; border-radius:15px; padding:30px; border:1px solid #333;">
+                        <img src="img/TESTI/testi 2.png" alt="User 3"
+                            style="width:80px; height:80px; border-radius:50%; margin-bottom:15px; border:2px solid #FFD700;">
+                        <p style="color:white; font-style:italic;">"Manusia adalah manusia, maka dari itu manusia adalah manusia."</p>
+                        <h5 style="color:#FFD700; margin-top:15px;">Abdul Qadir</h5>
+                        <span style="color:gray;">Cleaning Service</span>
+                    </div>
+
                 </div>
+
             </div>
         </div>
-    </div>
+    </section>
+    <!-- testimonial_area_end -->
+
+
 
     <!-- gallery  -->
     <section id="gallery">
@@ -945,7 +980,23 @@
         });
     </script>
 
-
+    <!-- Tambahkan script Owl Carousel jika belum -->
+    <script>
+        $(document).ready(function () {
+            $(".testimonial-carousel").owlCarousel({
+                items: 3,
+                margin: 20,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1024: { items: 3 }
+                }
+            });
+        });
+    </script>
 
 </body>
 
