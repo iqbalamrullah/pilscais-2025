@@ -334,6 +334,7 @@
     <section id="candidate-sma">
         <div class="performar_area black_bg">
             <div class="container">
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
@@ -353,24 +354,140 @@
                                         border-radius: 5px;
                                         text-decoration: none;
                                         transition: 0.3s;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 6px;
                                     }
 
                                     .section_title .btn-profil:hover {
                                         background-color: #ffaa00;
+                                    }
+
+                                    .btn-profil.disabled {
+                                        pointer-events: none;
+                                        opacity: 0.5;
+                                        cursor: not-allowed;
+                                        background-color: #999;
+                                    }
+
+                                    /* Countdown styles */
+                                    .countdown-wrap {
+                                        text-align: center;
+                                        color: #fff;
+                                        padding: 50px 20px;
+                                    }
+
+                                    .countdown-title {
+                                        font-size: 24px;
+                                        margin-bottom: 18px;
+                                    }
+
+                                    .countdown-timer {
+                                        display: flex;
+                                        justify-content: center;
+                                        gap: 18px;
+                                        flex-wrap: wrap;
+                                    }
+
+                                    .countdown-item {
+                                        background: rgba(255, 255, 255, 0.06);
+                                        padding: 14px 18px;
+                                        border-radius: 8px;
+                                        min-width: 90px;
+                                    }
+
+                                    .countdown-item .number {
+                                        font-size: 28px;
+                                        font-weight: 700;
+                                    }
+
+                                    .countdown-item .label {
+                                        font-size: 12px;
+                                        opacity: 0.9;
+                                    }
+
+                                    /* Fade-in for reveal content */
+                                    #candidate-reveal {
+                                        display: none;
+                                        /* Kandidat hidden awalnya */
+                                    }
+
+                                    #candidate-reveal.show {
+                                        display: block;
+                                        /* Muncul setelah waktu */
+                                        animation: fadeIn .6s ease;
+                                    }
+
+                                    @keyframes fadeIn {
+                                        from {
+                                            opacity: 0;
+                                            transform: translateY(6px);
+                                        }
+
+                                        to {
+                                            opacity: 1;
+                                            transform: none;
+                                        }
+                                    }
+
+                                    @media (max-width: 576px) {
+                                        .countdown-item {
+                                            min-width: 70px;
+                                            padding: 10px;
+                                        }
+
+                                        .countdown-title {
+                                            font-size: 20px;
+                                        }
                                     }
                                 </style>
 
                                 <div class="section_title mb-80">
                                     <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">KANDIDAT SMA
                                     </h3>
-                                    <a href="profil-kandidat-sma.html" class="btn-profil">LIHAT PROFIL KANDIDAT</a>
+                                    <a id="btn-profil" href="profil-kandidat-sma.html" class="btn-profil disabled"
+                                        aria-disabled="true">
+                                        🔒 LIHAT PROFIL KANDIDAT
+                                    </a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+
+                <!-- COUNTDOWN -->
+                <div id="candidate-countdown" class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="countdown-wrap">
+                            <div class="countdown-title">Candidate reveal in:</div>
+                            <div class="countdown-timer" aria-live="polite" aria-atomic="true">
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-days">0</div>
+                                    <div class="label">HARI</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-hours">0</div>
+                                    <div class="label">JAM</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-minutes">0</div>
+                                    <div class="label">MENIT</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-seconds">0</div>
+                                    <div class="label">DETIK</div>
+                                </div>
+                            </div>
+                            <div style="margin-top:14px; font-size:13px; opacity:0.9">
+                                Tanggal reveal: <strong>15 Agustus 2025 - 07:30 WIB</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REVEAL CONTENT -->
+                <div id="candidate-reveal" class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
@@ -384,6 +501,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                                     <div data-tilt class="thumb">
@@ -395,6 +513,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
                                     <div data-tilt class="thumb">
@@ -406,6 +525,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                     <div data-tilt class="thumb">
@@ -417,106 +537,344 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- COUNTDOWN SMA-->
+    <script>
+        (function () {
+            // Waktu reveal: hari ini jam 20:59 WIB
+            const revealDate = new Date('2025-08-15T07:30:00+07:00');
+
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minutesEl = document.getElementById('cd-minutes');
+            const secondsEl = document.getElementById('cd-seconds');
+
+            const countdownContainer = document.getElementById('candidate-countdown');
+            const revealContainer = document.getElementById('candidate-reveal');
+            const btnProfil = document.getElementById('btn-profil');
+
+            function enableButton() {
+                btnProfil.classList.remove('disabled');
+                btnProfil.removeAttribute('aria-disabled');
+                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = revealDate - now;
+
+                if (diff <= 0) {
+                    countdownContainer.style.display = 'none';
+                    revealContainer.classList.add('show');
+                    enableButton();
+                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
+                    return;
+                }
+
+                const seconds = Math.floor((diff / 1000) % 60);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                daysEl.textContent = days;
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            if (new Date() >= revealDate) {
+                countdownContainer.style.display = 'none';
+                revealContainer.classList.add('show');
+                enableButton();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
+
+
     <!-- KANDIDAT SMA END  -->
 
     <!-- KANDIDAT SMP START  -->
-    <section id="smp">
+    <section id="candidate-smp">
         <div class="performar_area black_bg">
             <div class="container">
+
                 <div class="row">
                     <div class="col-lg-12">
-                        <style>
-                            .section_title {
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                            }
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <style>
+                                    /* Countdown styles khusus SMP (pakai sama saja seperti SMA) */
+                                    .section_title {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                    }
 
-                            .section_title .btn-profil {
-                                padding: 6px 14px;
-                                background-color: #ffcc00;
-                                color: #000;
-                                font-weight: bold;
-                                border-radius: 5px;
-                                text-decoration: none;
-                                transition: 0.3s;
-                            }
+                                    .section_title .btn-profil {
+                                        padding: 6px 14px;
+                                        background-color: #ffcc00;
+                                        color: #000;
+                                        font-weight: bold;
+                                        border-radius: 5px;
+                                        text-decoration: none;
+                                        transition: 0.3s;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 6px;
+                                    }
 
-                            .section_title .btn-profil:hover {
-                                background-color: #ffaa00;
-                            }
-                        </style>
+                                    .section_title .btn-profil:hover {
+                                        background-color: #ffaa00;
+                                    }
 
-                        <div class="section_title mb-80">
-                            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">KANDIDAT SMP</h3>
-                            <a href="kandidate-smp.html" class="btn-profil">LIHAT PROFIL KANDIDAT</a>
+                                    .btn-profil.disabled {
+                                        pointer-events: none;
+                                        opacity: 0.5;
+                                        cursor: not-allowed;
+                                        background-color: #999;
+                                    }
+
+                                    .countdown-wrap {
+                                        text-align: center;
+                                        color: #fff;
+                                        padding: 50px 20px;
+                                    }
+
+                                    .countdown-title {
+                                        font-size: 24px;
+                                        margin-bottom: 18px;
+                                    }
+
+                                    .countdown-timer {
+                                        display: flex;
+                                        justify-content: center;
+                                        gap: 18px;
+                                        flex-wrap: wrap;
+                                    }
+
+                                    .countdown-item {
+                                        background: rgba(255, 255, 255, 0.06);
+                                        padding: 14px 18px;
+                                        border-radius: 8px;
+                                        min-width: 90px;
+                                    }
+
+                                    .countdown-item .number {
+                                        font-size: 28px;
+                                        font-weight: 700;
+                                    }
+
+                                    .countdown-item .label {
+                                        font-size: 12px;
+                                        opacity: 0.9;
+                                    }
+
+                                    #candidate-reveal-smp {
+                                        display: none;
+                                    }
+
+                                    #candidate-reveal-smp.show {
+                                        display: block;
+                                        animation: fadeIn .6s ease;
+                                    }
+
+                                    @keyframes fadeIn {
+                                        from {
+                                            opacity: 0;
+                                            transform: translateY(6px);
+                                        }
+
+                                        to {
+                                            opacity: 1;
+                                            transform: none;
+                                        }
+                                    }
+
+                                    @media (max-width: 576px) {
+                                        .countdown-item {
+                                            min-width: 70px;
+                                            padding: 10px;
+                                        }
+
+                                        .countdown-title {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                </style>
+
+                                <div class="section_title mb-80">
+                                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">KANDIDAT SMP
+                                    </h3>
+                                    <a id="btn-profil-smp" href="profil-kandidat-smp.html" class="btn-profil disabled"
+                                        aria-disabled="true">
+                                        🔒 LIHAT PROFIL KANDIDAT
+                                    </a>
+                                </div>
+
+                            </div>
                         </div>
-
                     </div>
                 </div>
-                <div class="row justify-content-center">
+
+                <!-- COUNTDOWN SMP -->
+                <div id="candidate-countdown-smp" class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="countdown-wrap">
+                            <div class="countdown-title">Candidate reveal in:</div>
+                            <div class="countdown-timer">
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-days-smp">0</div>
+                                    <div class="label">HARI</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-hours-smp">0</div>
+                                    <div class="label">JAM</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-minutes-smp">0</div>
+                                    <div class="label">MENIT</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="number" id="cd-seconds-smp">0</div>
+                                    <div class="label">DETIK</div>
+                                </div>
+                            </div>
+                            <div style="margin-top:14px; font-size:13px; opacity:0.9">
+                                Tanggal reveal: <strong>15 Agustus 2025 - 07:30 WIB</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REVEAL CONTENT SMP -->
+                <div id="candidate-reveal-smp" class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="row">
+                            <!-- KANDIDAT SMP 01 -->
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                                     <div data-tilt class="thumb">
                                         <img src="img/FOTO KANDIDAT/RASYA.jpg" alt="">
                                     </div>
                                     <div class="performer_heading">
-                                        <h4>RASYA RASYA RASYA</h4>
+                                        <h4>NAMA KANDIDAT 1</h4>
                                         <span>KANDIDAT PRESIDEN 01</span>
                                     </div>
-
                                 </div>
                             </div>
 
+                            <!-- KANDIDAT SMP 02 -->
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                                     <div data-tilt class="thumb">
                                         <img src="img/FOTO KANDIDAT/RASYA.jpg" alt="">
                                     </div>
                                     <div class="performer_heading">
-                                        <h4>RASYA RASYA RASYA</h4>
+                                        <h4>NAMA KANDIDAT 2</h4>
                                         <span>KANDIDAT WAKIL PRESIDEN 01</span>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- KANDIDAT SMP 03 -->
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
                                     <div data-tilt class="thumb">
                                         <img src="img/FOTO KANDIDAT/RASYA.jpg" alt="">
                                     </div>
                                     <div class="performer_heading">
-                                        <h4>RASYA RASYA RASYA</h4>
+                                        <h4>NAMA KANDIDAT 3</h4>
                                         <span>KANDIDAT PRESIDEN 02</span>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- KANDIDAT SMP 04 -->
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                     <div data-tilt class="thumb">
                                         <img src="img/FOTO KANDIDAT/RASYA.jpg" alt="">
                                     </div>
                                     <div class="performer_heading">
-                                        <h4>RASYA RASYA RASYA</h4>
+                                        <h4>NAMA KANDIDAT 4</h4>
                                         <span>KANDIDAT WAKIL PRESIDEN 02</span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
     </section>
+
+    <!-- COUNTDOWN SMP -->
+    <script>
+        (function () {
+            // Waktu reveal SMP
+            const revealDateSmp = new Date('2025-08-15T07:30:00+07:00');
+
+            const daysEl = document.getElementById('cd-days-smp');
+            const hoursEl = document.getElementById('cd-hours-smp');
+            const minutesEl = document.getElementById('cd-minutes-smp');
+            const secondsEl = document.getElementById('cd-seconds-smp');
+
+            const countdownContainer = document.getElementById('candidate-countdown-smp');
+            const revealContainer = document.getElementById('candidate-reveal-smp');
+            const btnProfil = document.getElementById('btn-profil-smp');
+
+            function enableButton() {
+                btnProfil.classList.remove('disabled');
+                btnProfil.removeAttribute('aria-disabled');
+                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = revealDateSmp - now;
+
+                if (diff <= 0) {
+                    countdownContainer.style.display = 'none';
+                    revealContainer.classList.add('show');
+                    enableButton();
+                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
+                    return;
+                }
+
+                const seconds = Math.floor((diff / 1000) % 60);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                daysEl.textContent = days;
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            if (new Date() >= revealDateSmp) {
+                countdownContainer.style.display = 'none';
+                revealContainer.classList.add('show');
+                enableButton();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
     <!-- KANDIDAT SMP END  -->
+
 
     <!-- TIMELINE START-->
     <div class="program_details_area detials_bg_1 overlay2 timeline-section" style="background-image: url('img/FOTO\ KABINET\ 1.jpg'); 
@@ -1037,6 +1395,8 @@
             });
         });
     </script>
+
+
 
 </body>
 
