@@ -64,13 +64,14 @@
                                                         <li>
                                                             <a href="#">PROFIL <i class="ti-angle-down"></i></a>
                                                             <ul class="submenu">
-                                                                <li><a href="profil-kandidat-sma.html">KANDIDAT SMA</a></li>
+                                                                <li><a href="profil-kandidat-sma.html">KANDIDAT SMA</a>
+                                                                </li>
                                                                 <li><a href="kandidate-smp.html">KANDIDAT SMP</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                
+
 
                                                 <li><a href="#gallery">Gallery</a></li>
                                                 <li><a href="cp.html">Contact</a></li>
@@ -116,8 +117,30 @@
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s"> PILSCAIS 2025</h3>
                             <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Be a Voice, Not an
                                 Echo</p>
-                            <div id="countdown" class="countdown-timer wow fadeInLeft" data-wow-duration="1s"
-                                data-wow-delay=".6s"></div>
+                            <!-- Dua Countdown di Tengah Slider -->
+                            <div class="countdown-container text-center">
+                                <!-- Countdown Menuju Pemilihan -->
+                                <div class="countdown-wrapper wow fadeInLeft" data-wow-duration="1s"
+                                    data-wow-delay=".6s" style="margin-bottom: 25px;">
+                                    <div id="countdown-pemilihan" class="countdown-timer"
+                                        style="font-size: 36px; font-weight: bold; color: #FFD700;"></div>
+                                    <p style="font-size: 20px; color: #ffffff; font-weight: bold; margin-top: 5px;">
+                                        Menuju Pemilihan</p>
+                                </div>
+
+                                <!-- Countdown Menuju Pelantikan -->
+                                <div class="countdown-wrapper wow fadeInLeft" data-wow-duration="1s"
+                                    data-wow-delay=".8s">
+                                    <div id="countdown-pelantikan" class="countdown-timer"
+                                        style="font-size: 36px; font-weight: bold; color: #FFD700;"></div>
+                                    <p style="font-size: 20px; color: #ffffff; font-weight: bold; margin-top: 5px;">
+                                        Menuju Pelantikan</p>
+                                </div>
+                            </div>
+
+
+
+
 
                         </div>
                     </div>
@@ -649,7 +672,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -758,7 +781,8 @@
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/3.jpg" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/4.jpg" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/LOGO LOGO.png" alt=""></div>
-                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt=""></div>
+                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -773,7 +797,8 @@
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/2.jpg" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/3.jpg" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/LOGO LOGO.png" alt=""></div>
-                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt=""></div>
+                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt="">
+                                </div>
 
                             </div>
                         </div>
@@ -789,7 +814,8 @@
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/3.JPG" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/LOGO LOGO.png" alt=""></div>
                                 <div class="single_brand text-center"><img src="img/GALERI SCAIS/7.jpeg" alt=""></div>
-                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt=""></div>
+                                <div class="single_brand text-center"><img src="img/FOTO KABINET SMP 1.png" alt="">
+                                </div>
                                 <div class="single_brand text-center"><img src="img/FOTO KABINET 2.png" alt=""></div>
                             </div>
                         </div>
@@ -807,7 +833,8 @@
             <div class="row mt-4" style="padding: 50px 0;">
                 <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 text-center">
                     <h4 style="color:white; margin-bottom:15px; font-size:32px; font-weight:bold;">PILSCAIS 2024</h4>
-                    <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px;">
+                    <div
+                        style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px;">
                         <iframe src="https://www.youtube.com/embed/hTXa_Mukkj0?si=X9pEQ6MtWUwi7sjr"
                             style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
                             title="YouTube video player" allowfullscreen
@@ -818,7 +845,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!-- gallery_end  -->
 
@@ -940,6 +967,35 @@
         }, 1000);
 
 
+    </script>
+
+
+    <script>
+        function startCountdown(targetDate, elementId) {
+            var countDownDate = new Date(targetDate).getTime();
+            var countdownFunction = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById(elementId).innerHTML = "Waktu Habis";
+                    return;
+                }
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(elementId).innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+            }, 1000);
+        }
+
+        // Jalankan dua countdown
+        startCountdown("Aug 26, 2025 08:00:00", "countdown-pemilihan");
+        startCountdown("Sep 2, 2025 08:00:00", "countdown-pelantikan");
     </script>
 
     <script>
