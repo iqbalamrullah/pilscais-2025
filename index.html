@@ -60,7 +60,7 @@
                                                 <li><a href="#">Candidate <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         <li><a href="index.html#candidate-sma">SMA</a></li>
-                                                        <li><a href="index.html#smp">SMP</a></li>
+                                                        <li><a href="index.html#candidate-smp">SMP</a></li>
                                                         <li>
                                                             <a href="#">PROFIL <i class="ti-angle-down"></i></a>
                                                             <ul class="submenu">
@@ -545,61 +545,7 @@
         </div>
     </section>
 
-    <!-- COUNTDOWN SMA-->
-    <script>
-        (function () {
-            // Waktu reveal: hari ini jam 20:59 WIB
-            const revealDate = new Date('2025-08-15T07:30:00+07:00');
-
-            const daysEl = document.getElementById('cd-days');
-            const hoursEl = document.getElementById('cd-hours');
-            const minutesEl = document.getElementById('cd-minutes');
-            const secondsEl = document.getElementById('cd-seconds');
-
-            const countdownContainer = document.getElementById('candidate-countdown');
-            const revealContainer = document.getElementById('candidate-reveal');
-            const btnProfil = document.getElementById('btn-profil');
-
-            function enableButton() {
-                btnProfil.classList.remove('disabled');
-                btnProfil.removeAttribute('aria-disabled');
-                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
-            }
-
-            function updateCountdown() {
-                const now = new Date();
-                const diff = revealDate - now;
-
-                if (diff <= 0) {
-                    countdownContainer.style.display = 'none';
-                    revealContainer.classList.add('show');
-                    enableButton();
-                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
-                    return;
-                }
-
-                const seconds = Math.floor((diff / 1000) % 60);
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-                daysEl.textContent = days;
-                hoursEl.textContent = hours.toString().padStart(2, '0');
-                minutesEl.textContent = minutes.toString().padStart(2, '0');
-                secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-
-            if (new Date() >= revealDate) {
-                countdownContainer.style.display = 'none';
-                revealContainer.classList.add('show');
-                enableButton();
-            } else {
-                updateCountdown();
-                setInterval(updateCountdown, 1000);
-            }
-        })();
-    </script>
-
+    
 
     <!-- KANDIDAT SMA END  -->
 
@@ -819,60 +765,7 @@
         </div>
     </section>
 
-    <!-- COUNTDOWN SMP -->
-    <script>
-        (function () {
-            // Waktu reveal SMP
-            const revealDateSmp = new Date('2025-08-15T07:30:00+07:00');
-
-            const daysEl = document.getElementById('cd-days-smp');
-            const hoursEl = document.getElementById('cd-hours-smp');
-            const minutesEl = document.getElementById('cd-minutes-smp');
-            const secondsEl = document.getElementById('cd-seconds-smp');
-
-            const countdownContainer = document.getElementById('candidate-countdown-smp');
-            const revealContainer = document.getElementById('candidate-reveal-smp');
-            const btnProfil = document.getElementById('btn-profil-smp');
-
-            function enableButton() {
-                btnProfil.classList.remove('disabled');
-                btnProfil.removeAttribute('aria-disabled');
-                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
-            }
-
-            function updateCountdown() {
-                const now = new Date();
-                const diff = revealDateSmp - now;
-
-                if (diff <= 0) {
-                    countdownContainer.style.display = 'none';
-                    revealContainer.classList.add('show');
-                    enableButton();
-                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
-                    return;
-                }
-
-                const seconds = Math.floor((diff / 1000) % 60);
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-                daysEl.textContent = days;
-                hoursEl.textContent = hours.toString().padStart(2, '0');
-                minutesEl.textContent = minutes.toString().padStart(2, '0');
-                secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-
-            if (new Date() >= revealDateSmp) {
-                countdownContainer.style.display = 'none';
-                revealContainer.classList.add('show');
-                enableButton();
-            } else {
-                updateCountdown();
-                setInterval(updateCountdown, 1000);
-            }
-        })();
-    </script>
+    
     <!-- KANDIDAT SMP END  -->
 
 
@@ -1397,6 +1290,118 @@
 
 
 
+<!-- COUNTDOWN SMA-->
+    <script>
+        (function () {
+            // Waktu reveal: hari ini jam 20:59 WIB
+            const revealDate = new Date('2025-08-15T07:30:00+07:00');
+
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minutesEl = document.getElementById('cd-minutes');
+            const secondsEl = document.getElementById('cd-seconds');
+
+            const countdownContainer = document.getElementById('candidate-countdown');
+            const revealContainer = document.getElementById('candidate-reveal');
+            const btnProfil = document.getElementById('btn-profil');
+
+            function enableButton() {
+                btnProfil.classList.remove('disabled');
+                btnProfil.removeAttribute('aria-disabled');
+                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = revealDate - now;
+
+                if (diff <= 0) {
+                    countdownContainer.style.display = 'none';
+                    revealContainer.classList.add('show');
+                    enableButton();
+                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
+                    return;
+                }
+
+                const seconds = Math.floor((diff / 1000) % 60);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                daysEl.textContent = days;
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            if (new Date() >= revealDate) {
+                countdownContainer.style.display = 'none';
+                revealContainer.classList.add('show');
+                enableButton();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
+<!-- COUNTDOWN SMA END-->
+
+<!-- COUNTDOWN SMP -->
+    <script>
+        (function () {
+            // Waktu reveal SMP
+            const revealDateSmp = new Date('2025-08-15T07:30:00+07:00');
+
+            const daysEl = document.getElementById('cd-days-smp');
+            const hoursEl = document.getElementById('cd-hours-smp');
+            const minutesEl = document.getElementById('cd-minutes-smp');
+            const secondsEl = document.getElementById('cd-seconds-smp');
+
+            const countdownContainer = document.getElementById('candidate-countdown-smp');
+            const revealContainer = document.getElementById('candidate-reveal-smp');
+            const btnProfil = document.getElementById('btn-profil-smp');
+
+            function enableButton() {
+                btnProfil.classList.remove('disabled');
+                btnProfil.removeAttribute('aria-disabled');
+                btnProfil.innerHTML = 'LIHAT PROFIL KANDIDAT';
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = revealDateSmp - now;
+
+                if (diff <= 0) {
+                    countdownContainer.style.display = 'none';
+                    revealContainer.classList.add('show');
+                    enableButton();
+                    if (window.WOW) { try { new WOW().init(); } catch (e) { } }
+                    return;
+                }
+
+                const seconds = Math.floor((diff / 1000) % 60);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                daysEl.textContent = days;
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            if (new Date() >= revealDateSmp) {
+                countdownContainer.style.display = 'none';
+                revealContainer.classList.add('show');
+                enableButton();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
+
+    <!-- COUNTDOWN SMP END -->
 </body>
 
 </html>
