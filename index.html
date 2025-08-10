@@ -945,32 +945,6 @@
     <div id="countdown" class="countdown-timer wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s"></div>
 
     <script>
-        // Set tanggal dan jam acara
-        var eventDate = new Date("Aug 26, 2025 08:00:00").getTime();
-
-        var countdownFunction = setInterval(function () {
-            var now = new Date().getTime();
-            var distance = eventDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML =
-                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "Event Started!";
-            }
-        }, 1000);
-
-
-    </script>
-
-
-    <script>
         function startCountdown(targetDate, elementId) {
             var countDownDate = new Date(targetDate).getTime();
             var countdownFunction = setInterval(function () {
