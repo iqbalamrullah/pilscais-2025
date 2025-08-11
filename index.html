@@ -71,69 +71,97 @@
         <![endif]-->
 
     <!-- header-start -->
-    <section id="header">
-        <header>
-            <div class="header-area ">
-                <div id="sticky-header" class="main-header-area">
-                    <div class="container">
-                        <div class="header_bottom_border">
-                            <div class="row align-items-center">
-                                <div class="col-xl-3 col-lg-3">
-                                    <div class="logo">
-                                        <a href="index.html">
-                                            <img src="img/LOGO KECIL TULISAN.png" alt="">
+<section id="header">
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/LOGO KECIL TULISAN.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Main Menu Desktop -->
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="#header">home</a></li>
+                                            <li><a href="#about">About</a></li>
+
+                                            <li><a href="#">Candidate <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="index.html#candidate-sma">SMA</a></li>
+                                                    <li><a href="index.html#candidate-smp">SMP</a></li>
+                                                    <li>
+                                                        <a href="#">PROFIL <i class="ti-angle-down"></i></a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">KANDIDAT SMA</a></li>
+                                                            <li><a href="#">KANDIDAT SMP</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="#gallery">Gallery</a></li>
+                                            <li><a href="cp.html">Contact</a></li>
+
+                                            <!-- FORM PENGADUAN khusus mobile -->
+                                            <li class="d-block d-lg-none">
+                                                <a href="#" style="color: #007bff; font-weight: 600;">FORM PENGADUAN</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- FORM PENGADUAN Desktop -->
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="buy_tkt text-lg-right">
+                                    <div class="book_btn">
+                                        <a href="#" class="btn btn-primary px-4 py-2">
+                                            FORM PENGADUAN
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="main-menu d-none d-lg-block">
-                                        <nav>
-                                            <ul id="navigation">
-                                                <li><a href="#header">home</a></li>
-                                                <li><a href="#about">About</a></li>
+                            </div>
 
-                                                <li><a href="#">Candidate <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="index.html#candidate-sma">SMA</a></li>
-                                                        <li><a href="index.html#candidate-smp">SMP</a></li>
-                                                        <li>
-                                                            <a href="#">PROFIL <i class="ti-angle-down"></i></a>
-                                                            <ul class="submenu">
-                                                                <li><a href="#">KANDIDAT SMA</a>
-                                                                </li>
-                                                                <li><a href="#">KANDIDAT SMP</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-
-                                                <li><a href="#gallery">Gallery</a></li>
-                                                <li><a href="cp.html">Contact</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                    <div class="buy_tkt">
-                                        <div class="book_btn d-none d-lg-block">
-                                            <a href="#">FORM PENGADUAN</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="mobile_menu d-block d-lg-none"></div>
-                                </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
-        </header>
-    </section>
-    <!-- header-end -->
+        </div>
+    </header>
+</section>
+<!-- header-end -->
+
+<style>
+    .book_btn a.btn-primary {
+        background-color: #007bff; /* warna biru bootstrap */
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .book_btn a.btn-primary:hover {
+        background-color: #ffffff;
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
 
     <!-- slider_area_start -->
     <div class="slider_area">
