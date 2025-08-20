@@ -27,8 +27,20 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#navigation').slicknav({
+      prependTo: ".mobile_menu",
+      label: ""
+    });
+  });
+</script>
 
 </head>
+
+
 
 <body>
     <!--[if lte IE 9]>
@@ -54,7 +66,7 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a href="index.html#header">home</a></li>
+                                                <li><a href="index.html">home</a></li>
                                                 <li><a href="index.html#about">About</a></li>
 
                                                 <li><a href="#">Candidate <i class="ti-angle-down"></i></a>
@@ -66,7 +78,6 @@
                                                 </li>
 
                                                 <li><a href="index.html#gallery">Gallery</a></li>
-                                                
                                                 <li><a href="cp.html">Contact</a></li>
                                             </ul>
 
@@ -94,7 +105,7 @@
     </section>
     <!-- header-end -->
 
-    <!-- slider_area_start -->
+     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
             <div class="container">
@@ -111,8 +122,30 @@
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s"> PILSCAIS 2025</h3>
                             <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Be a Voice, Not an
                                 Echo</p>
-                            <div id="countdown" class="countdown-timer wow fadeInLeft" data-wow-duration="1s"
-                                data-wow-delay=".6s"></div>
+                            <!-- Dua Countdown di Tengah Slider -->
+                            <div class="countdown-container text-center">
+                                <!-- Countdown Menuju Pemilihan -->
+                                <div class="countdown-wrapper wow fadeInLeft" data-wow-duration="1s"
+                                    data-wow-delay=".6s" style="margin-bottom: 25px;">
+                                    <div id="countdown-pemilihan" class="countdown-timer"
+                                        style="font-size: 36px; font-weight: bold; color: #FFD700;"></div>
+                                    <p style="font-size: 20px; color: #ffffff; font-weight: bold; margin-top: 5px;">
+                                        Menuju Pemilihan</p>
+                                </div>
+
+                                <!-- Countdown Menuju Pelantikan -->
+                                <div class="countdown-wrapper wow fadeInLeft" data-wow-duration="1s"
+                                    data-wow-delay=".8s">
+                                    <div id="countdown-pelantikan" class="countdown-timer"
+                                        style="font-size: 36px; font-weight: bold; color: #FFD700;"></div>
+                                    <p style="font-size: 20px; color: #ffffff; font-weight: bold; margin-top: 5px;">
+                                        Menuju Pelantikan</p>
+                                </div>
+                            </div>
+
+
+
+
 
                         </div>
                     </div>
@@ -126,7 +159,7 @@
     <!-- Kandidat Section -->
     <section id="candidate-sma" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Kandidat SMP</h2>
+            <h2 class="text-center mb-4">Kandidat SMA</h2>
 
             <!-- Tombol Pindah Antar Kandidat -->
             <ul class="nav nav-tabs justify-content-center" id="candidateTabs" role="tablist">
@@ -143,7 +176,14 @@
                         Kandidat 02
                     </button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="kandidat3-tab" data-bs-toggle="tab" data-bs-target="#kandidat3"
+                        type="button" role="tab">
+                        Kandidat 03
+                    </button>
+                </li>
             </ul>
+            
 
             <div class="tab-content mt-4" id="candidateTabsContent">
                 
@@ -161,19 +201,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
-                    <div class="text-center">
-                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
-                            style="max-height:400px;">
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- Kandidat 02-->
                 <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
                     <div class="text-center">
@@ -189,8 +217,39 @@
                     </div>
                 </div>
 
+                  <!-- Kandidat 02-->
+                <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
+                    <div class="text-center">
+                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
+                            style="max-height:400px;">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kandidat 03-->
+                <div class="tab-pane fade" id="kandidat3" role="tabpanel" aria-labelledby="kandidat3-tab">
+                    <div class="text-center">
+                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
+                            style="max-height:400px;">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                
+
             </div>
         </div>
+
+        
     </section>
 
     <!-- Bootstrap 5 CSS & JS -->
@@ -289,36 +348,79 @@
 
 
     <script src="js/main.js"></script>
-    <style>
-        #countdown {
-            font-size: 48px;
-            font-weight: bold;
-            color: #ff4d4d;
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
+    <div id="countdown" class="countdown-timer wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s"></div>
+
     <script>
-        // Set tanggal dan jam acara
-        var eventDate = new Date("Aug 26, 2025 08:00:00").getTime();
+        function startCountdown(targetDate, elementId) {
+            var countDownDate = new Date(targetDate).getTime();
+            var countdownFunction = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
 
-        var countdownFunction = setInterval(function () {
-            var now = new Date().getTime();
-            var distance = eventDate - now;
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById(elementId).innerHTML = "Waktu Habis";
+                    return;
+                }
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML =
-                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                document.getElementById(elementId).innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+            }, 1000);
+        }
 
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "Event Started!";
-            }
-        }, 1000);
+        // Jalankan dua countdown
+        startCountdown("Aug 26, 2025 08:00:00", "countdown-pemilihan");
+        startCountdown("Sep 2, 2025 08:00:00", "countdown-pelantikan");
+    </script>
 
-       
+    <script>
+        $(document).ready(function () {
+            $('.brand_active_1').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: false,
+                autoplaySpeed: 1000,
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 4 },
+                    1000: { items: 6 }
+                }
+            });
+
+            $('.brand_active_2').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: false,
+                autoplaySpeed: 1000,
+                rtl: true, /* arah ke kanan */
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 4 },
+                    1000: { items: 6 }
+                }
+            });
+
+            $('.brand_active_3').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: false,
+                autoplaySpeed: 1000,
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 4 },
+                    1000: { items: 6 }
+                }
+            });
+        });
     </script>
