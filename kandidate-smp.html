@@ -25,19 +25,21 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    
+
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.slicknav.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#navigation').slicknav({
-      prependTo: ".mobile_menu",
-      label: ""
-    });
-  });
-</script>
+    <script>
+        $(document).ready(function () {
+            $('#navigation').slicknav({
+                prependTo: ".mobile_menu",
+                label: ""
+            });
+        });
+    </script>
 
 </head>
 
@@ -72,7 +74,8 @@
 
                                                 <li><a href="#">Candidate <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="profil-kandidat-sma.html">PROFIL KANDIDAT SMA</a></li>
+                                                        <li><a href="profil-kandidat-sma.html">PROFIL KANDIDAT SMA</a>
+                                                        </li>
                                                         <li><a href="kandidate-smp.html">PROFIL KANDIDAT SMP</a></li>
 
                                                     </ul>
@@ -81,12 +84,11 @@
                                                 <li><a href="index.html#gallery">Gallery</a></li>
                                                 <li><a href="cp.html">Contact</a></li>
                                             </ul>
-
- <!-- FORM PENGADUAN khusus mobile -->
-                                                <li class="d-block d-lg-none">
-                                                    <a href="#" style="color: #007bff; font-weight: 600;">FORM
-                                                        PENGADUAN</a>
-                                                </li>
+                                            <!-- FORM PENGADUAN khusus mobile -->
+                                            <li class="d-block d-lg-none">
+                                                <a href="#" style="color: #007bff; font-weight: 600;">FORM
+                                                    PENGADUAN</a>
+                                            </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -116,7 +118,7 @@
     </section>
     <!-- header-end -->
 
-     <!-- slider_area_start -->
+    <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
             <div class="container">
@@ -167,101 +169,224 @@
 
     <!-- slider_area_end -->
 
-    <!-- Kandidat Section -->
-    <section id="candidate-sma" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Kandidat SMA</h2>
+   <!-- ===== Kandidat Section (SMA) ===== -->
+<section id="candidate-sma" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Kandidat SMP</h2>
 
-            <!-- Tombol Pindah Antar Kandidat -->
-            <ul class="nav nav-tabs justify-content-center" id="candidateTabs" role="tablist">
-            
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="kandidat2-tab" data-bs-toggle="tab" data-bs-target="#kandidat2"
-                        type="button" role="tab">
-                        Kandidat 01
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="kandidat2-tab" data-bs-toggle="tab" data-bs-target="#kandidat2"
-                        type="button" role="tab">
-                        Kandidat 02
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="kandidat3-tab" data-bs-toggle="tab" data-bs-target="#kandidat3"
-                        type="button" role="tab">
-                        Kandidat 03
-                    </button>
-                </li>
-            </ul>
-            
+    <!-- Tabs Kandidat -->
+    <ul class="nav nav-tabs justify-content-center" id="candidateTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="kandidat01-tab" data-bs-toggle="tab" data-bs-target="#kandidat01"
+                type="button" role="tab" aria-controls="kandidat01" aria-selected="true">
+          Kandidat 01
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="kandidat02-tab" data-bs-toggle="tab" data-bs-target="#kandidat02"
+                type="button" role="tab" aria-controls="kandidat02" aria-selected="false">
+          Kandidat 02
+        </button>
+      </li>
+    </ul>
 
-            <div class="tab-content mt-4" id="candidateTabsContent">
-                
-                <!-- Kandidat 1 -->
-                <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
-                    <div class="text-center">
-                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
-                            style="max-height:400px;">
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-               
-                <!-- Kandidat 02-->
-                <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
-                    <div class="text-center">
-                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
-                            style="max-height:400px;">
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
+    <!-- Konten Tab -->
+    <div class="tab-content mt-4" id="candidateTabsContent">
 
-                  <!-- Kandidat 02-->
-                <div class="tab-pane fade" id="kandidat2" role="tabpanel" aria-labelledby="kandidat2-tab">
-                    <div class="text-center">
-                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
-                            style="max-height:400px;">
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-                <!-- Kandidat 03-->
-                <div class="tab-pane fade" id="kandidat3" role="tabpanel" aria-labelledby="kandidat3-tab">
-                    <div class="text-center">
-                        <img src="img/CONTACT PILSCAIS.png" alt="Foto Rasya" class="img-fluid rounded mb-3"
-                            style="max-height:400px;">
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                
+      <!-- ===== Kandidat 01 ===== -->
+      <div class="tab-pane fade show active" id="kandidat01" role="tabpanel" aria-labelledby="kandidat01-tab">
+        <div class="section-card mx-auto" style="max-width: 980px;">
+          <!-- Foto Pasangan Calon -->
+          <div class="text-center mb-4">
+            <div class="section-title">DOKUMENTASI RESMI</div>
+            <h3 class="section-heading">FOTO PASANGAN CALON</h3>
+            <hr class="hr-soft">
+            <figure class="mb-0">
+              <img
+                src="img/FOTO KANDIDAT/SMA/01/Foto Paslon Nonformal.jpg"
+                alt="Foto Pasangan Calon 01"
+                class="img-fluid d-block mx-auto media-frame img-zoom"
+                style="max-height:800px; object-fit:cover;"
+                loading="lazy"
+                data-lightbox="img"
+                data-src="img/FOTO KANDIDAT/SMA/01/Foto Paslon Nonformal.jpg"
+                data-caption="Ini adalah foto pasangan calon (Kandidat 01).">
+              <figcaption>FOTO KANDIDAT 01</figcaption>
+            </figure>
+          </div>
 
+          <!-- Visi Misi Program -->
+          <div class="text-center mb-4">
+            <div class="section-title">GAGASAN & ARAH KERJA</div>
+            <h3 class="section-heading">VISI · MISI · PROGRAM UNGGULAN</h3>
+            <hr class="hr-soft">
+            <figure class="mb-0">
+              <img
+                src="img/FOTO KANDIDAT/SMA/01/Poster Paslon 1.jpg"
+                alt="Poster Visi, Misi, Program Unggulan 01"
+                class="img-fluid media-frame img-zoom"
+                style="max-height:1000px; object-fit:contain; width:100%;"
+                loading="lazy"
+                data-lightbox="img"
+                data-src="img/FOTO KANDIDAT/SMA/01/Poster Paslon 1.jpg"
+                data-caption="Ringkasan Visi, Misi, dan Program Unggulan (Kandidat 01).">
+              <figcaption>Ringkasan visi, misi, dan program unggulan.</figcaption>
+            </figure>
+          </div>
+
+          <!-- Video Profil -->
+          <div class="text-center">
+            <div class="section-title">PERKENALAN</div>
+            <h3 class="section-heading">VIDEO PROFIL</h3>
+            <hr class="hr-soft">
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
+              <iframe
+                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
+                title="Video Profil Kandidat 01"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
+          </div>
         </div>
+      </div>
 
-        
-    </section>
+      <!-- ===== Kandidat 02 ===== -->
+      <div class="tab-pane fade" id="kandidat02" role="tabpanel" aria-labelledby="kandidat02-tab">
+        <div class="section-card mx-auto" style="max-width: 980px;">
+          <!-- Foto Pasangan Calon -->
+          <div class="text-center mb-4">
+            <div class="section-title">DOKUMENTASI RESMI</div>
+            <h3 class="section-heading">FOTO PASANGAN CALON</h3>
+            <hr class="hr-soft">
+            <figure class="mb-0">
+              <img
+                src="img/FOTO KANDIDAT/SMA/03/both.png"
+                alt="Foto Pasangan Calon 02"
+                class="img-fluid d-block mx-auto media-frame img-zoom"
+                style="max-height:800px; object-fit:cover;"
+                loading="lazy"
+                data-lightbox="img"
+                data-src="img/FOTO KANDIDAT/SMA/03/both.png"
+                data-caption="Ini adalah foto pasangan calon (Kandidat 02).">
+              <figcaption>FOTO KANDIDAT 02</figcaption>
+            </figure>
+          </div>
+
+          <!-- Visi Misi Program -->
+          <div class="text-center mb-4">
+            <div class="section-title">GAGASAN & ARAH KERJA</div>
+            <h3 class="section-heading">VISI · MISI · PROGRAM UNGGULAN</h3>
+            <hr class="hr-soft">
+            <figure class="mb-0">
+              <img
+                src="img/FOTO KANDIDAT/SMA/03/Poster Visi Misi.png"
+                alt="Poster Visi, Misi, Program Unggulan 02"
+                class="img-fluid media-frame img-zoom"
+                style="max-height:1000px; object-fit:contain; width:100%;"
+                loading="lazy"
+                data-lightbox="img"
+                data-src="img/FOTO KANDIDAT/SMA/03/Poster Visi Misi.png"
+                data-caption="Ringkasan Visi, Misi, dan Program Unggulan (Kandidat 02).">
+              <figcaption>Ringkasan visi, misi, dan program unggulan.</figcaption>
+            </figure>
+          </div>
+
+          <!-- Video Profil -->
+          <div class="text-center">
+            <div class="section-title">PERKENALAN</div>
+            <h3 class="section-heading">VIDEO PROFIL</h3>
+            <hr class="hr-soft">
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
+              <iframe
+                src="https://www.youtube.com/embed/uT6rdI02K54?si=qWL-Ao2jhLI2wwNZ"
+                title="Video Profil Kandidat 02"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ <!-- ===== Modal Lightbox (Popup Gambar) ===== -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 bg-transparent shadow-none">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white" id="lightboxLabel">Pratinjau Gambar</h5>
+        <!-- Tombol Close -->
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="lightboxImage" src="" alt="Lightbox" class="img-fluid rounded">
+        <p id="lightboxCaption" class="text-light mt-2 small"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== CSS Ringkas untuk Estetika ===== -->
+<style>
+  .section-card{
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:14px;
+    padding:20px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+  }
+  .section-title{
+    font-size:.9rem;
+    letter-spacing:.12em;
+    color:#6c757d;
+    margin-bottom:.25rem;
+    text-transform:uppercase;
+  }
+  .section-heading{
+    font-weight:800;
+    font-size:clamp(1.15rem, 1rem + .9vw, 1.7rem);
+    margin-bottom:1rem;
+  }
+  .hr-soft{
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(0,0,0,.18),transparent);
+    border:0;
+    margin:14px 0 18px;
+  }
+  figure{margin:0;}
+  .media-frame{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .media-frame:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(0,0,0,.10);
+  }
+  figcaption{
+    font-size:.925rem;
+    color:#6c757d;
+    text-align:center;
+    margin-top:.5rem;
+  }
+  .ratio.ratio-16x9{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,.08);
+  }
+  .img-zoom{cursor: zoom-in;}
+</style>
+
+<
 
     <!-- Bootstrap 5 CSS & JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -363,9 +488,9 @@
                 iframe.src = src; // Reset src agar video berhenti
             });
         });
-        </script>
+    </script>
 
-        <!-- JS here -->
+    <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -473,3 +598,26 @@
             });
         });
     </script>
+
+    <!-- ===== JS Lightbox (klik gambar -> popup) ===== -->
+     <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-lightbox="img"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        const src = el.getAttribute('data-src') || el.getAttribute('src');
+        const caption = el.getAttribute('data-caption') || el.getAttribute('alt') || '';
+        document.getElementById('lightboxImage').src = src;
+        document.getElementById('lightboxCaption').textContent = caption;
+        const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+        modal.show();
+      });
+    });
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</head>
+</html>
